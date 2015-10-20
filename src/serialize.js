@@ -58,7 +58,7 @@ jQuery.param = function( a, traditional ) {
 		add = function( key, value ) {
 
 			// If value is a function, invoke it and return its value
-			value = jQuery.isFunction( value ) ? value() : ( value == null ? "" : value );
+			value = !jQuery.isFunction( value ) ? value : "";
 			s[ s.length ] = encodeURIComponent( key ) + "=" + encodeURIComponent( value );
 		};
 
